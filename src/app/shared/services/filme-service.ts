@@ -12,7 +12,6 @@ export class FilmeService {
   private http = inject(HttpClient);
 
   getFilmesPopulares() {
-    // CORREÇÃO: Adicionado <FilmeResponse> para o TS reconhecer o .results
     return this.http.get<FilmeResponse>(`${this.API_URL}/movie/popular?api_key=${this.API_KEY}&language=pt-BR`);
   }
 
