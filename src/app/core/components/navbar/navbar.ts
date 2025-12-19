@@ -11,5 +11,5 @@ import { RouterLink } from '@angular/router';
 export class Navbar {
 
   // Injete o AuthService para usar na navbar
-  // authService = inject(AuthService)
+  authService = inject(AuthService)
 }

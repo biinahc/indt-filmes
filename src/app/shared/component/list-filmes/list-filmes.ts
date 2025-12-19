@@ -11,12 +11,12 @@ import { CardFilme } from '../card-filme/card-filme';
 })
 export class ListFilmes {
   // descomente as linhas abaixo para receber os filmes e o título como inputs
- // filmes = input.required<Filme[]>();
- // titulo = input.required<string>();
+  filmes = input.required<Filme[]>();
+  titulo = input.required<string>();
 
 
  // descomente a linha abaixo para referenciar o elemento do carrossel
-  // carousel = viewChild<ElementRef<HTMLDivElement>>('carousel');
+  carousel = viewChild<ElementRef<HTMLDivElement>>('carousel');
 
   scroll(direction: 'left' | 'right') {
     const el = this.carousel()?.nativeElement;
