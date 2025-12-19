@@ -1,18 +1,24 @@
-<div class="min-h-screen bg-gray-100 ">   
-      @if (filmesResource.isLoading()) {
-        <div class="text-center p-10 text-blue-600">
-          <p class="animate-pulse">Carregando filmes...</p>
-        </div>
-      }
-
-      @if (filmesResource.error()) {
-        <div class="text-center text-red-500 p-10">
-          Ops! Erro ao carregar filmes.
-        </div>
-      }
-
-      @if (filmesResource.value(); as response) {
-        <app-list-filmes  titulo="Filmes Populares" [filmes]="response.results" ></app-list-filmes>
-      }
-
+<div class="min-h-screen bg-gray-100">   
+  @if (filmesResource.isLoading()) {
+    <div class="text-center p-10 text-blue-600">
+      <p class="animate-pulse">Carregando filmes...</p>
     </div>
+  }
+
+  @if (filmesResource.error()) {
+    <div class="text-center text-red-500 p-10">
+      Ops! Erro ao carregar filmes.
+    </div>
+  }
+
+  @if (filmesResource.value(); as response) {
+    <app-list-filmes titulo="Filmes Populares" [filmes]="response.results"></app-list-filmes>
+  }
+
+  @if (filmesTopResource.value(); as responseTop) {
+    <app-list-filmes 
+      titulo="Melhores Avaliados" 
+      [filmes]="responseTop.results">
+    </app-list-filmes>
+  }
+</div>

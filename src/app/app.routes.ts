@@ -7,7 +7,8 @@ import { publicGuard } from './core/guards/public-guard';
 
 export const routes: Routes = [
 
-    { path: '', component: Hero, canActivate: [publicGuard] },
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'login', component: Login, canActivate: [publicGuard] },
     { path: 'home', component: Home, canActivate: [ authGuard] }
+    
 ];

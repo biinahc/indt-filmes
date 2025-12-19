@@ -11,11 +11,14 @@ import { ListFilmes } from '../../shared/component/list-filmes/list-filmes';
   styleUrl: './home.css',
 })
 export class Home {
-
   private filmeService = inject(FilmeService);
 
   filmesResource = rxResource({
-    stream: () => this.filmeService.getFilmesPopulares(),  
-  })  
+    stream: () => this.filmeService.getFilmesPopulares(),
+  });
+
+  filmesTopResource = rxResource({
+    stream: () => this.filmeService.getFilmesTop(),
+  });  
 
 }
